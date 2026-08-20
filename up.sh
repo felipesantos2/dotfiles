@@ -7,26 +7,15 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-apt update
-
+# depends on apt
 . "$PWD/make/install.sh"
 . "$PWD/tree/install.sh"
 . "$PWD/uv/install.sh"
 . "$PWD/jq/install.sh"
-
-
-curl https://sh.rustup.rs -sSf | sh
-
-# cargo installed                       11.13 MiB
-# clippy installed                        5.13 MiB
-# rust-docs installed                       23.00 MiB
-# rust-std installed                       29.29 MiB
-# rustc installed                       76.05 MiB
-# rustfmt installed                        2.37 MiB  
-# 
-#. "$HOME/.cargo/env"             # For sh/bash/zsh/ash/dash/pdksh
-# source "$HOME/.cargo/env.fish"  # For fish
-# source "~/.cargo/env.nu"  # For nushell
-# source "$HOME/.cargo/env.tcsh"  # For tcsh
-# . "$HOME/.cargo/env.ps1"        # For pwsh
-# source "$HOME/.cargo/env.xsh"   # For xonsh
+. "$PWD/tmux/install.sh"
+# depends on cargo installed previewsly
+. "$PWD/gitu/install.sh"
+. "$PWD/batcat/install.sh"
+. "$PWD/eza/install.sh"
+# depends on UV
+. "$PWD/commitizen/install.sh"
