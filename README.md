@@ -19,6 +19,25 @@ Principais Pacotes que uso
 
 ---
 
+Executando o arquivo de entrada
+
+Apps do sistema necessitam de permissão de adminstrador (root/sudo). Agora, os Apps de usuário devem ser instalados com o usuário comum: `id=1000`.
+
+O *script* inicialmente deve ser executado como *root* usando o *sudo*, mas assim que ele chagar no bloco de apps do usuário ocorre automaticamente a troca para o usuário comum (`id=1000`).
+
 ```bash
 chmod +x install.sh
 ```
+```bash
+sudo ./install.sh
+```
+```bash
+sudo bash install.sh
+```
+
+--
+
+Os Apps devem ser declarados nestes dois arquivos com base no seu tipo:
+
+[./scripts/system-apps.sh](./scripts/system-apps.sh)
+[./scripts/user-apps.sh](./scripts/user-apps.sh)
