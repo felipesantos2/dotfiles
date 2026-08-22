@@ -1,6 +1,10 @@
-# .dotfiles
+# dotfiles
 
-pacotes essenciais no meu terminal
+#### Pacotes e apps essenciais no meu Terminal/CLI
+
+A ideia desse repo é ter um lugar registrando os pacotes e apps que mais uso. Claro, também ter uma forma rápida de migrar cada APP e suas confirurações entre as maquinas quen uso.
+
+Principais Pacotes que uso
 |      |                  |
 |--------|--------------------------|
 | rg     |     procurar no projeto  |

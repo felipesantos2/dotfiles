@@ -1,0 +1,19 @@
+#  Born Again Shell
+#  which, command -v, type -p
+#
+# -gt
+# -ne
+# -lt
+# -le
+# -eq
+# -ge
+# echo "$name $last_name"
+# string, integer, arrays
+
+
+# is_root_user() {
+#     if [ "$EUID" -ne 0 ]; then
+#       echo "para apps do sistema (apt) use o root user (sudo)"
+#       exit 1
+#     fi
+# }

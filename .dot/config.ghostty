@@ -1,0 +1,5 @@
+# theme = Batman
+theme = Arthur
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style-blink = false
+cursor-style = block_hollow
