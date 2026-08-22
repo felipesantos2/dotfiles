@@ -18,3 +18,7 @@ Principais Pacotes que uso
 | docker |     linux e containers   |
 
 ---
+
+```bash
+chmod +x install.sh
+```

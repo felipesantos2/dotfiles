@@ -6,7 +6,7 @@ if [ "$(whoami)" != root ]; then
    exit 1
 fi
 
-apps=(make, tree, jq, tmux, git, batcat, fzf, ripgrep)
+source "$PWD/scripts/system-apps.sh"
 
 app_already_installed() {
     echo $(type -t $1) # file or empty
@@ -19,17 +19,19 @@ install_or_update() {
         echo -e "   app [$2] já existe, vamos atualizá-lo \n"
         echo -e "   [run]: apt install -y --only-upgrade $2"
         echo -e "\n |-------------------------------------------| \n"
-
-        apt install -y --only-upgrade $2 2>> errors.txt
+        apt install -y --only-upgrade $2
     else
+        echo -e "\n |-------------------------------------------| \n"
         echo "app [$2] não existe, vamos instalá-lo"
-        apt install -y $2 2>> errors.txt
+        apt install -y $2
+        echo -e "\n |-------------------------------------------| \n"
     fi
 }
 
-
 echo -e "\n |--------------------START-----------------------| \n"
 for item in "${apps[@]}"; do
-    install_or_update $(app_already_installed make) make
+    IFS="," read -ra item <<< "$item"
+    exit=$(app_already_installed "$item")
+    install_or_update "$exit" "$item"
 done
 echo -e "\n |---------------------END------------------------| \n"
