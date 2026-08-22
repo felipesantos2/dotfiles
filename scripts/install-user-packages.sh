@@ -7,21 +7,7 @@ if [ "$(whoami)" = root ]; then
    exit 1
 fi
 
-# alias ls="eza --oneline --long --all --header --git" for gitu . "$HOME/.cargo/env"
-apps=(
-    ("uv", "curl -LsSf https://astral.sh/uv/install.sh | sh"),
-    ("zoxide", "curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh"),
-    ("zed", "curl -f https://zed.dev/install.sh | sh"),
-    ("eza", "cargo install eza --locked"),
-    ("cargo", "curl https://sh.rustup.rs -sSf | sh"),
-    ("gitu", "cargo install gitu --locked"),
-    ("nvm", "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash"),
-    ("cz", "uv tool install commitizen && uv tool upgrade commitizen"),
-    ("fd", "cargo install fd-find")
-    ("eza", "cargo install eza --locked")
-)
-
-
+source "$PWD/scripts/user-apps.sh"
 
 app_already_installed() {
     echo $(type -t $1) # file or empty
