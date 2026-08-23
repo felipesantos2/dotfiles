@@ -1,3 +1,6 @@
+# https://docs.github.com/pt/actions/get-started/quickstart
+name: Shell Linter
+run-name: Shell-Linter By ShellChecker
 on:
   push:
     branches:
@@ -11,4 +14,8 @@ jobs:
       - name: Run ShellCheck
         uses: Azbagheri/shell-linter@latest
         with:
-          path: "install.sh"
+          path: "*.sh"
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
