@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 if [ "$(whoami)" != root ]; then
    echo "para apps do sistema (apt) use o root user (sudo)"
    exit 1
