@@ -7,7 +7,7 @@
 set -e
 
 distro=$(uname -n)
-if [ $distro = 'pop-os' ]; then
+if [ "$distro" = 'pop-os' ]; then
     echo "Diretorio de trabalho: $PWD"
     echo "Distro Linux: $distro"
     source "$PWD/scripts/install-system-packages.sh" 2>> errors.txt
@@ -15,7 +15,7 @@ if [ $distro = 'pop-os' ]; then
     su - "felipesantos2" - <<HERE
         source "$PWD/scripts/install-user-packages.sh" 2>> errors.txt
 HERE
-elif [ $distro = 'ubuntu' ]; then
+elif [ "$distro" = 'ubuntu' ]; then
     echo "Diretorio de trabalho: $PWD"
     echo "Distro Linux: $distro"
 else
