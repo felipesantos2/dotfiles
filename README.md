@@ -2,7 +2,8 @@
 
 #### Pacotes e apps essenciais no meu Terminal/CLI
 
-A ideia desse repo é ter um lugar registrando os pacotes e apps que mais uso. Claro, também ter uma forma rápida de migrar cada APP e suas confirurações entre as maquinas quen uso.
+A ideia é ter um lugar registrando os pacotes e APPS que mais uso. Claro, também ter uma forma rápida de migrar cada APP e suas confirurações entre maquinas.
+PC pessoal, PC do trabalho e qualquer outro com um SETUP rápido.
 
 Principais Pacotes que uso
 |      |                  |
@@ -39,5 +40,5 @@ sudo bash install.sh
 
 Os Apps devem ser declarados nestes dois arquivos com base no seu tipo:
 
-[./scripts/system-apps.sh](./scripts/system-apps.sh)
-[./scripts/user-apps.sh](./scripts/user-apps.sh)
+[./scripts/ssystem-packages.sh](./scripts/system-packages.sh)
+[./scripts/user-packages.sh](./scripts/user-packages.sh)
