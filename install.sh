@@ -6,7 +6,7 @@
 
 set -e
 
-distro=$(uname -n)
+distro="$(uname -n)"
 if [ "$distro" = 'pop-os' ]; then
     echo "Diretorio de trabalho: $PWD"
     echo "Distro Linux: $distro"
