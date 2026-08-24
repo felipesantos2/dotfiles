@@ -9,7 +9,9 @@
 
 set -e
 
+# shellcheck disable=SC2034  # Unused variables left for readability
 input_args=(u s U S '-u' '-s' '-U' '-S')
+# shellcheck disable=SC2034  # Unused variables left for readability
 allow_distros=('ubuntu' 'pop-os')
 
 get_args() {
