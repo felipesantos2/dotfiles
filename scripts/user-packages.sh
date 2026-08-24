@@ -19,7 +19,15 @@ apps=(
     ("cz" "uv tool install commitizen && uv tool upgrade commitizen")
     ("fd" "cargo install fd-find")
     ("eza" "cargo install eza --locked")
+    ("serena" "uv tool install -p 3.13 serena-agent")
 )
+
+print_template() {
+    echo -e "\n |-------------------------------------------| \n"
+    echo -e "   app [$2] já existe, vamos atualizá-lo \n"
+    echo -e "   [run]: source '$PWD/user/$2.sh'"
+    echo -e "\n |-------------------------------------------| \n"
+}
 
 
 app_already_installed() {
