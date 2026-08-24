@@ -7,6 +7,7 @@ if [ "$(whoami)" = root ]; then
     exit 1
 fi
 
+# shellcheck disable=SC2034  # Unused variables left for readability
 apps=(
     ("uv" "curl -LsSf https://astral.sh/uv/install.sh | sh")
     ("zoxide" "curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh")
