@@ -70,3 +70,10 @@ Os Apps devem ser declarados nestes dois arquivos com base no seu tipo:
 [./scripts/ssystem-packages.sh](./scripts/system-packages.sh)
 
 [./scripts/user-packages.sh](./scripts/user-packages.sh)
+
+---
+Mundança no comportamento inicial do script: Vamos aceitar alguns paramentos de entrada.
+
+```bash
+input_args=(u s U S '-u' '-s' '-U' '-S')
+```
