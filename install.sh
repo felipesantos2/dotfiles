@@ -8,12 +8,13 @@
 
 set -e
 
-distro="$(uname -n)"
-if [ "$distro" = 'pop-os' ]; then
+# distro="$(uname -n)"
+
+distro=$(awk -F= '$1 == "ID" {print $2}' /etc/os-release | tr -d '"')
+if [ "$distro" = 'ubuntu' || "$distro" = 'pop-os' ]; then
+    echo -e "Diretorio de Trabalho: $PWD\n"
+    echo -e "Distro Linux: $distro\n"
     source "$PWD/scripts/system-packages.sh" 2>>errors.txt
-elif [ "$distro" = 'ubuntu' ]; then
-    echo "Diretorio de trabalho: $PWD"
-    echo "Distro Linux: $distro"
 else
     echo "distro desconhecida"
 fi
