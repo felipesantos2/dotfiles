@@ -19,6 +19,7 @@ get_args() {
         echo "Parametro obrigatório não encontrado: user: -u ou system: -s"
         exit 1
     fi
+    echo "$1"
 }
 
 load_script_command() {
@@ -29,10 +30,17 @@ load_script_command() {
 get_args "$1"
 
 distro=$(awk -F= '$1 == "ID" {print $2}' /etc/os-release | tr -d '"')
-if [ "$distro" = "ubuntu" ]; then
+
+if [ "$distro" = "ubuntu" ] || [ "$distro" = "pop" ]; then
     echo -e "Diretorio de Trabalho: $PWD\n"
     echo -e "Distro Linux: $distro\n"
     load_script_command 2>>errors.txt
+
+    # if "$1" -eq "-s"; then
+    #     load_script_command "system" 2>>errors.txt
+    # else
+    #     load_script_command "user" 2>>errors.txt
+    # fi
     exit 0
 else
     echo "Distro Desconhecida"
